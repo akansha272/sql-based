@@ -1,4 +1,7 @@
 const express = require('express');
+const { getDb } = require('../data/database');
+
+const db = require('../data/database');
 
 const router = express.Router();
 
@@ -11,6 +14,7 @@ router.get('/posts', function(req, res) {
 });
 
 router.get('/new-post', async function(req, res) {
+  getDb.getDb().
   res.render('create-post');
 });
 
